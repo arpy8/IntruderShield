@@ -8,7 +8,7 @@ This repository contains a Laptop Protection Trojan designed to prevent unauthor
 
 ## Overview
 
-The Laptop Protection Trojan is a lightweight executable file that once launched would allow my laptop to act in a absurd way and would eventually cause it to shut down. The primary purpose of this Trojan is to add an extra layer of security to my laptop and protect it from unauthorized use.
+The Laptop Protection Trojan is a lightweight script that once launched would allow my laptop to act in a absurd way and would eventually cause it to shut down. The primary purpose of this Trojan is to add an extra layer of security to my laptop and protect it from unauthorized use.
 
 ## Installation
 
@@ -26,12 +26,20 @@ The Laptop Protection Trojan is a lightweight executable file that once launched
    ```
    python trojan.py
    ```
-
+   <br>
+I would suggest you to create a .exe file by using the following command in the command prompt:
+```
+   pyinstaller --onefile --noconsole trojan.py
+```
+   <br>
    **Note: Make sure you have Python installed on your system. The program has been tested on Python 3.11, but it should work with other recent Python versions as well.**
 
 ## Usage
 
-Once the Trojan is running, it will trigger the siren and will then continuously change tabs. Finally, it will proceed to lock the system, protecting my important files from the user.
+Once the Trojan is running, it will trigger the siren and will then continuously change tabs. Finally, it will proceed to lock the system, protecting the important files from the intruder.
+
+
+
 
 **P.S.** Once launched, the only way to stop it is using the task manager (ctrl+shift+esc).
 
