@@ -4,13 +4,14 @@ from datetime import datetime
 
 
 def lock_screen():
+    pyautogui.keyDown("ctrl")
     pyautogui.keyDown("win")
     pyautogui.press("d")
     pyautogui.keyUp("win")
+    pyautogui.keyUp("ctrl")
     pyautogui.keyDown("alt")
     pyautogui.press("f4")
     pyautogui.keyUp("alt")
-    for _ in range(2): pyautogui.press("up")
     pyautogui.press("enter")
     pyautogui.sleep(1)
     pyautogui.press("enter")
