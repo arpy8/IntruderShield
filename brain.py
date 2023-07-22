@@ -1,11 +1,13 @@
 from os import environ
 
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
+
+import cv2
 import pygame
 from datetime import datetime
 import pyautogui
-pyautogui.FAILSAFE = False
 
+pyautogui.FAILSAFE = False
 
 
 def play_siren():
@@ -45,3 +47,14 @@ def log_data():
     with open('data/log_file.txt', 'a') as f:
         f.writelines(f'{datetime.now().strftime("%d/%m/%Y - %H:%M:%S")}\n')
         f.close()
+
+
+def click_picture():
+    name = datetime.now().strftime("%H.%M.%S  %d-%m-%Y")
+    camera = cv2.VideoCapture(0)
+    for i in range(1):
+        return_value, image = camera.read()
+        cv2.imwrite(f'data/intruder/{name}.png', image)
+    del (camera)
+
+

