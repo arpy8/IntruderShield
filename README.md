@@ -15,8 +15,8 @@ This Python script captures an image from your webcam when executed and saves it
 1. Clone this repository to your local machine.
 
 ```
-git clone https://github.com/arpy8/Laptop_Protection_Trojan.git
-cd Laptop_Protection_Trojan
+git clone https://github.com/arpy8/IntruderShield.git
+cd IntruderShield
 ```
 
 2. Install the required Python libraries.
