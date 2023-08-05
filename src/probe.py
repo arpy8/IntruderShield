@@ -7,14 +7,14 @@ import pygame
 from PIL import Image
 from tkinter import messagebox
 
-dir_path = r'./data/intruder'
-file_name = os.listdir('./data/intruder')[-1]
-count_txt = open("./data/count.txt", "r").readline()
+dir_path = r'../data/intruder'
+file_name = os.listdir(r'../data/intruder/')[-1]
+count_txt = open("../data/count.txt", "r").readline()
 
 
 def play_siren():
     pygame.mixer.init()
-    pygame.mixer.music.load("./src/assets/aud.ogg")
+    pygame.mixer.music.load("assets/aud.ogg")
     pygame.mixer.music.play()
 
 
@@ -28,10 +28,13 @@ def open_image():
 
 
 try:
-    if dir_count() != count_txt:
-        play_siren()
-        open("./data/count.txt", "w").write(dir_count())
-        messagebox.showinfo("Critical Message", f"Trojan file triggered")
-        open_image()
+    if count_txt != 0:
+        if dir_count() != count_txt:
+            play_siren()
+            open("../data/count.txt", "w").write(dir_count())
+            messagebox.showinfo("Critical Message", f"Trojan file triggered")
+            open_image()
+    else:
+        print("No files found")
 except TypeError or FileNotFoundError:
     pass
